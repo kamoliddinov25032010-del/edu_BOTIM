@@ -2574,7 +2574,7 @@ async def s_ans(c: CallbackQuery):
     is_correct = 1 if ans == t["correct"] else 0
     await q("INSERT INTO test_results(test_id,student_id,answer,is_correct,created_at) VALUES(?,?,?,?,?)",
             (tid, c.from_user.id, ans, is_correct, datetime.now().isoformat()))
-        if is_correct:
+    if is_correct:
         await add_points(c.from_user.id, t["points"], f"Test: {t['title']}")
         await c.message.edit_text(f"✅ <b>To'g'ri!</b>\n\n+{t['points']} ball")
     else:
