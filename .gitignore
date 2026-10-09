@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+edu_bot.db
+.env
+.DS_Store
+*.db
